@@ -12,7 +12,7 @@ print "Hello! Let\'s get started"
 
 #Whether to continue with default values
 question = "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N)? "
-existing = raw_input(question)
+existing = raw_input(question).upper()
 
 #A Funcion to Add status message
 def add_status():
@@ -82,7 +82,7 @@ def add_friend():
 	#Converting Rating To FloatingPoint
     new_friend.rating = float(new_friend.rating)
 	#If Friend's Name is Not Empty ,Age is above 12 and friend's rating is above or equals to spy's rating 
-    if len(new_friend.name) > 0 and new_friend.age > 12 and new_friend.rating >= spy.rating:
+    if len(new_friend.name) > 0 and new_friend.age > 12 and new_friend.age < 50: #new_friend.rating >= spy.rating:
         friends.append(new_friend)#Add Friend to The Friends List
         print 'Friend Added!'
     else:#If The Required Conditions are not Met
@@ -190,14 +190,14 @@ def start_chat(spy):
 
 if existing == "Y": #If Value of existing is Y
     start_chat(spy)  #Start The start_chat function 
-else:
+elif existing== "N": #Getting Spy Details if 
 
     spy = Spy('','',0,0.0)
 
 # Welcome Message
     spy.name = raw_input("Welcome to spy chat, you must tell me your spy name first: ")
 
-    if len(spy.name) > 0:#If spy's name is not empty
+    if len(spy.name) > 0 and spy.name!=" ":#If spy's name is not empty
 	#Get spy Salutation
         spy.salutation = raw_input("Should I call you Mr. or Ms.?: ")
 	#Get spy Age
@@ -211,5 +211,9 @@ else:
 	#Start Chat 
         start_chat(spy)
     else:
-        print 'Please add a valid spy name' #If Spy Name's length is <0 (Spy name is empty)
+        #Invalid Name
+        print "Please add a valid spy name"
 
+
+else:
+    print "Invalid Choice..!"

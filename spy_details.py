@@ -1,6 +1,17 @@
 #Importing DateTime Features
 from datetime import datetime
 
+#Spy implimentation using Dictionary
+#spy={
+#    'name':'bond',
+#    'salutation':'Mr.',
+#    'age':24,
+#    'rating':4.7,
+#    'is_online':True
+#}
+
+
+
 #Class Spy
 class Spy:
 #Method __init__ for class Spy
@@ -23,12 +34,13 @@ class ChatMessage:
         self.time = datetime.now()
         self.sent_by_me = sent_by_me
 
-spy = Spy('bond', 'Mr.', 24, 4.7) #Assigning  spy spy with default spy values  
+#Default spy values
+spy = Spy('bond', 'Mr.', 24, 4.7)
 
 #Values for friends list
-friend_one = Spy('Raja', 'Mr.', 4.9, 27)
-friend_two = Spy('Mata Hari', 'Ms.', 4.39, 21)
-friend_three = Spy('No', 'Dr.', 4.95, 37)
+friend_one = Spy('SpyOne', 'Mr.', 27, 4.9)
+friend_two = Spy('SpyTwo', 'Mr.', 21, 4.39)
+friend_three = Spy('SpyThree', 'Dr.', 37, 4.95)
 
 #List of friends 
 friends = [friend_one, friend_two, friend_three]
